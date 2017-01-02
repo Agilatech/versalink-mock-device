@@ -1,0 +1,34 @@
+{
+  "name": "versalink-mock-device",
+  "version": "0.8.0",
+  "description": "Mock sensor device driver for use in the Agilatech VersaLink system",
+  "main": "mock-scout.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Agilatech/versalink-mock-device.git"
+  },
+  "keywords": [
+    "sensor",
+    "mock",
+    "mock sensor",
+    "beaglebone",
+    "raspberry pi"
+  ],
+  "author": "Agilatech <scott@agilatech.com> (http://agilatech.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Agilatech/versalink-mock-device/issues"
+  },
+  "homepage": "https://github.com/Agilatech/versalink-mock-device#readme",
+  "dependencies": {
+    "versalink-device": "*",
+    "zetta-scout": "*",
+    "@agilatech/mock": "*"
+  }
+}
