@@ -2,7 +2,7 @@
 const options = require('./options');
 
 const Scout = require('zetta-scout');
-const mock = require('./mock');
+const Mock = require('./mock');
 const util = require('util');
 
 const MockScout = module.exports = function(opts) {
@@ -18,6 +18,11 @@ const MockScout = module.exports = function(opts) {
     }
   }
 
+  if (options.name == 'undefined') { options.name = "MOCK" }
+  this.name = options.name;
+
+  this.mock = new Mock(options);
+
   Scout.call(this);
 };
 
@@ -25,18 +30,16 @@ util.inherits(MockScout, Scout);
 
 MockScout.prototype.init = function(next) {
 
-  const Mock = new mock(options);
-
-  const query = this.server.where({name: 'MOCK'});
+  const query = this.server.where({name: this.name});
   
   const self = this;
   this.server.find(query, function(err, results) {
     if (results[0]) {
-      self.provision(results[0], Mock, options);
-      self.server.info('Provisioned known device MOCK');
+      self.provision(results[0], self.mock);
+      self.server.info('Provisioned known device ' + self.name);
     } else {
-      self.discover(Mock, options);
-      self.server.info('Discovered new device MOCK');
+      self.discover(self.mock);
+      self.server.info('Discovered new device ' + self.name);
     }
   });
 
