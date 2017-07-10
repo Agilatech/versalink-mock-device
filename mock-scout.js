@@ -18,7 +18,7 @@ const MockScout = module.exports = function(opts) {
     }
   }
 
-  if (options.name == 'undefined') { options.name = "MOCK" }
+  if (options.name === undefined) { options.name = "MOCK" }
   this.name = options.name;
 
   this.mock = new Mock(options);
@@ -34,12 +34,17 @@ MockScout.prototype.init = function(next) {
   
   const self = this;
   this.server.find(query, function(err, results) {
-    if (results[0]) {
-      self.provision(results[0], self.mock);
-      self.server.info('Provisioned known device ' + self.name);
-    } else {
-      self.discover(self.mock);
-      self.server.info('Discovered new device ' + self.name);
+    if (!err) {
+      if (results[0]) {
+        self.provision(results[0], self.mock);
+        self.server.info('Provisioned known device ' + self.name);
+      } else {
+        self.discover(self.mock);
+        self.server.info('Discovered new device ' + self.name);
+      }
+    }
+    else {
+      self.server.error(err);
     }
   });
 
