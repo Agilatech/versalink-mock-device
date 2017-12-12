@@ -1,5 +1,5 @@
 
-const options = require('./options');
+const config = require('./config');
 
 const Scout = require('zetta-scout');
 const Mock = require('./mock');
@@ -11,18 +11,18 @@ module.exports = class MockScout extends Scout {
     super();
 
     if (typeof opts !== 'undefined') {
-      // copy all options defined in the server
+      // copy all config defined in the server
       for (const key in opts) {
         if (typeof opts[key] !== 'undefined') {
-          options[key] = opts[key];
+          config[key] = opts[key];
         }
       }
     }
 
-    if (options.name === undefined) { options.name = "MOCK" }
-    this.name = options.name;
+    if (config.name === undefined) { config.name = "MOCK" }
+    this.name = config.name;
 
-    this.mock = new Mock(options);
+    this.mock = new Mock(config);
 
   }
 

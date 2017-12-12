@@ -4,11 +4,11 @@ const device = require('@agilatech/mock');
 
 module.exports = class Mock extends VersalinkDevice {
     
-    constructor(options) {
+    constructor(config) {
 
         const hardware = new device();
 
-        super(hardware, options);
+        super(hardware, config);
 
         this.hardware.watchValueAtIndex(0, (this._valueEvent).bind(this));
         
@@ -25,7 +25,3 @@ module.exports = class Mock extends VersalinkDevice {
         }
     }
 }
-
-
-
-
