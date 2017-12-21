@@ -1,7 +1,6 @@
 
 const config = require('./config');
-
-const Scout = require('zetta-scout');
+const Scout = require(process.versalink.node_modules + 'zetta-scout');
 const Mock = require('./mock');
 
 module.exports = class MockScout extends Scout {

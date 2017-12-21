@@ -1,6 +1,6 @@
 ## VersaLink Mock Sensor device driver
 
-This device driver is specifically designed to be used with the Agilatech VersaLink IOT System.
+This device driver is specifically designed to be used with the Agilatech® VersaLink IIoT System.
 
 ### Install
 ```
@@ -14,7 +14,7 @@ This device driver is designed to simulate a general sensor device.  It does thi
 
 
 ### Usage
-This device driver is designed to be consumed by the Agilatech VersaLink IOT system.  As such, it is not really applicable or useful in other environments.
+This device driver is designed to be consumed by the Agilatech® VersaLink IIoT system.  As such, it is not really applicable or useful in other environments.
 
 To use it in VersaLink, insert its object definition as an element in the devices array in the _devlist.json_ file.
 ```
@@ -108,4 +108,4 @@ VersaLink will run on any small single board computer up to large cloud server w
 
 
 ### Copyright
-Copyright © 2017 Agilatech. All Rights Reserved.
+Copyright © 2018 Agilatech®. All Rights Reserved.

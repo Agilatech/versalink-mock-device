@@ -14,8 +14,6 @@
   "author": "Agilatech <scott@agilatech.com> (http://agilatech.com)",
   "license": "MIT",
   "dependencies": {
-    "@agilatech/versalink-device": "*",
-    "zetta-scout": "*",
     "@agilatech/mock": "*"
   }
 }
