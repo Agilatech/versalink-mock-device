@@ -1,6 +1,6 @@
 {
   "name": "@agilatech/versalink-mock-device",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Mock sensor device driver for use in the Agilatech VersaLink system",
   "main": "mock-scout.js",
   "directories": {
