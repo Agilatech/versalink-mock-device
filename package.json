@@ -3,8 +3,9 @@
   "version": "1.2.0",
   "description": "Mock sensor device driver for use in the Agilatech VersaLink system",
   "main": "mock-scout.js",
-  "directories": {
-    "example": "example"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Agilatech/versalink-mock-device.git"
   },
   "keywords": [
     "sensor",
